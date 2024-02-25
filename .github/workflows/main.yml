@@ -31,5 +31,6 @@ jobs:
               git pull origin main &&
               sudo npm i &&
               sudo npm run build &&
+              sudo npm run stop:all &&
               sudo npm run prod:start
               '
