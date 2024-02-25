@@ -6,7 +6,7 @@
   "main": "app/root.jsx",
   "scripts": {
     "start": "remix-serve build/index.js",
-    "stop:all": "pm2 stop all",
+    "stop:all": "pm2 stop all && pm2 delete all",
     "prod:start": "PORT=80 pm2 start -f server.mjs",
     "build": "remix build",
     "test": "echo \"Error: no test specified\" && exit 1"
