@@ -1,0 +1,31 @@
+name: Deploy
+
+on: push
+  
+jobs:
+  Deploy:
+    name: Deploy to machine
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2 
+      - name: Build & Deploy
+        env:
+            PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+            HOSTNAME: ${{ secrets.SSH_HOST }}
+            USER_NAME: ${{ secrets.USER_NAME }}
+            PROJECT_DIRECTORY: ${{ secrets.PROJECT_DIRECTORY }}
+      
+        run: |
+          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
+
+              # Now we have got the access of machine and we will start the deploy.
+              cd ${PROJECT_DIRECTORY} &&
+              git checkout main &&
+              git fetch --all &&
+              git reset --hard origin/main &&
+              git pull origin main &&
+              sudo npm i &&
+              sudo npm run build
+              '
