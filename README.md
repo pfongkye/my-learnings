@@ -20,3 +20,4 @@
 - I found a [gist](https://gist.github.com/raviagheda/c69ae5e884f4490b1af656dbd80c00dd) on how to SSH to an EC2 instance using [GitHub actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions). As prerequisite, I had to install git using `sudo yum install git` on EC2 instance.
 - I did a first git clone of the repository in a specific folder on EC2 instance: `git clone https://github.com/pfongkye/my-learnings.git`
 - I added pm2 as dependency to project to be able to run the application on EC2 instance using a script
+- There could be conflicting instances running due to previous pm2 start. I tried to stop all processes managed by pm2 first before running a new one.
