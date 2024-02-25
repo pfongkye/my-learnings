@@ -21,7 +21,8 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
 
               # Now we have got the access of machine and we will start the deploy.
-              cd ${PROJECT_DIRECTORY} &&
+              # Assuming we can access the project directory from relative path.
+              cd remix-repo/my-learnings &&
               git checkout main &&
               git fetch --all &&
               git reset --hard origin/main &&
