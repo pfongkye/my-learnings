@@ -17,3 +17,6 @@
 - Install as dev dependency `@remix-run/serve` to avoid having it on EC2 server as I am using `express` instead. Use npm `install --production` only the required dependencies (i.e no devDependencies installed).
 - When pushing new modifications, be careful about the hash versioning into the files. Also, we need to kill old app [listening on port 80](https://www.cyberciti.biz/faq/find-linux-what-running-on-port-80-command/) and restart the app again using `sudo PORT=80 npx pm2 start server.mjs`
 - I could also try to use an API to reboot EC2 instance if I don't know how to kill and restart app.
+- I found a [gist](https://gist.github.com/raviagheda/c69ae5e884f4490b1af656dbd80c00dd) on how to SSH to an EC2 instance using [GitHub actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions). As prerequisite, I had to install git using `sudo yum install git` on EC2 instance.
+- I did a first git clone of the repository in a specific folder on EC2 instance: `git clone https://github.com/pfongkye/my-learnings.git`
+- I added pm2 as dependency to project to be able to run the application on EC2 instance using a script

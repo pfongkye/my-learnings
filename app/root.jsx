@@ -18,7 +18,7 @@ import {
         </head>
         <body>
           <h1>Hello world!</h1>
-          <p>My new Remix App from scratch (without restarting)</p>
+          <p>My new Remix App from scratch (using GHA)</p>
           <Outlet />
   
           <Scripts />
