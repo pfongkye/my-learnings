@@ -21,3 +21,8 @@
 - I did a first git clone of the repository in a specific folder on EC2 instance: `git clone https://github.com/pfongkye/my-learnings.git`
 - I added pm2 as dependency to project to be able to run the application on EC2 instance using a script
 - There could be conflicting instances running due to previous pm2 start. I tried to stop all processes managed by pm2 first before running a new one.
+
+# Development Experience (DX)
+
+- Use [TypeScript](https://remix.run/docs/en/main/guides/typescript) for better tooling and to catch some bugs earlier and add a [GitHub action](https://docs.github.com/en/actions/using-workflows/about-workflows) for type checking.
+- Add some [ADRs](https://adr.github.io/) for decision logs.
