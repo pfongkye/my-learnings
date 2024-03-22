@@ -9,7 +9,8 @@
     "stop:all": "pm2 stop all && pm2 delete all",
     "prod:start": "PORT=80 pm2 start -f server.mjs",
     "build": "remix build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typecheck": "tsc"
   },
   "author": "Pascal Fong Kye",
   "license": "ISC",
@@ -25,6 +26,8 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^2.6.0",
-    "@remix-run/serve": "^2.6.0"
+    "@remix-run/serve": "^2.6.0",
+    "@types/react": "^18.2.67",
+    "typescript": "^5.4.3"
   }
 }
